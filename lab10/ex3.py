@@ -23,12 +23,13 @@ def main():
     try:
         for i in FILES:
             temp = open(i, 'r')
+            print(temp)
             files.append(temp)
             for line in temp:
                 if WORDLOOK.upper() in line.upper():
-                    instances.append(f"{FILES[n]}: {line}")
+                    instances.append(f"{FILES[n]}: {line.rstrip()}")
             n += 1
-        print(''.join(instances))
+        print(' \n'.join(instances))
 
         for j in files:
             j.close()
