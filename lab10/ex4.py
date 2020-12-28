@@ -14,13 +14,15 @@ def main():
             for line in file1:
                 temp_list = []
                 temp_list = line.rstrip().split("; ")
-                print(temp_list)
                 service, amount = temp_list[1], int(temp_list[2])
                 prev_amount = service_amount.get(service, 0)
                 service_amount.setdefault(service, amount)
-                service_amount[service] = amount + prev_amount
+                service_amount[service] += prev_amount
     except OSError as problem:
         print(f"Error encountered: {problem}")
+    except ValueError as error:
+        print(f"Wrong value format: {error}")
+
     for i, k in service_amount.items():
         print(f"{i}: {k}")
 
