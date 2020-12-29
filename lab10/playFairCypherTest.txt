@@ -1,0 +1,3 @@
+Another way of thwarting a simple letter frequency analysis of an
+encrypted text is to encrypt pairs of letters together. A simple scheme to do this is the
+Playfair cipher. You pick a keyword and remove duplicate letters from it. Then you
