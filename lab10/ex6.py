@@ -42,8 +42,8 @@ def main():
                 try:
                     x = []
                     x = plain_text(line)
-                    print(f"Original: {x}")
-                    print(cypher(x, tbl))
+                    print(f"Original: {''.join([letters for element in x for letters in element])}")
+                    print(f"Encrypted: {''.join([l for ele in cypher(x, tbl) for l in ele])}")
                 except ValueError as error:
                     print(f"Unexpected value entered: {error}")
 
