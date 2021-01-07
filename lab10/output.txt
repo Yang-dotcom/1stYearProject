@@ -1,4 +1,4 @@
-The lamb was sure to go!
-And everywhere that Mary went,
-Whose fleece was white as snow.
-Mary had a little lamb
+/*0*/ Mary had a little lamb
+/*1*/ Whose fleece was white as snow.
+/*2*/ And everywhere that Mary went,
+/*3*/ The lamb was sure to go!
