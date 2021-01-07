@@ -39,6 +39,7 @@ def contact_suspect(dict_name, start_day, end_day):
     if len(sus_cont_list) == 0:
         sus_cont_list.append(0)
     return sus_cont_list
+# finish
 
 if __name__ == '__main__':
     main()
