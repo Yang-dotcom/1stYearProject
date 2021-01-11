@@ -12,26 +12,25 @@ def main():
         for line in suspiscious:
             start_day = int(dict_name[line.strip()][1])
             end_day = int(dict_name[line.strip()][2])
-            suspect_contacts_dict[line.strip()] = contact_suspect(dict_name, start_day, end_day)
+            suspect_contacts_dict[line.strip()] = contact_suspect(dict_name, start_day, end_day, line)
     for key in suspect_contacts_dict:
-        if len(suspect_contacts_dict[key]) != 0:
+        if suspect_contacts_dict[key][0] != 0:
             suspect_contacts_dict[key] = sorted(suspect_contacts_dict[key])
-            print(f"** Customer contacts: 1 {key} **")
+            print(f"** Customer contacts:  {key} **")
             for i in range(len(suspect_contacts_dict[key])):
                 print(f"Contact with {suspect_contacts_dict[key][i]}, phone {dict_name[suspect_contacts_dict[key][i]][0]}")
         else:
-            print(f"** Customer contacts: 2 {key}: **")
-            print(f"The customer {suspect_contacts_dict[key]} had no contact")
+            print(f"** Customer contacts:  {key}: **")
+            print(f"The customer {key} had no contact")
 
 
-def contact_suspect(dict_name, start_day, end_day):
+def contact_suspect(dict_name, start_day, end_day, suspect):
     sus_cont_list = list()
-    flag = 0
     for key in dict_name:
-        contact_days = [m for m in range(int(dict_name[key][1]), int(dict_name[key][2]))]
+        flag = 0
+        contact_days = [m for m in range(int(dict_name[key][1]), int(dict_name[key][2]) + 1)]
         while flag >= 0 and flag < len(contact_days):
-            print(contact_days[flag])
-            if contact_days[flag] in range(start_day, end_day):
+            if contact_days[flag] in range(start_day, end_day + 1) and not key == suspect.strip():
                 sus_cont_list.append(key)
                 flag = -1
             else:
@@ -39,7 +38,7 @@ def contact_suspect(dict_name, start_day, end_day):
     if len(sus_cont_list) == 0:
         sus_cont_list.append(0)
     return sus_cont_list
-# finish
+
 
 if __name__ == '__main__':
     main()
