@@ -372,3 +372,50 @@
 # foo = (2, a)
 # a.pop()
 # print(foo)
+
+## Computer Architecture
+"""
+input device = everything that is used to give information to the computer (keyboard, mouse, microphone)
+output device =  everything that is used to give info from computer to outside world (e.g. monitor, loudspeaker)
+asynchronous analog signals are used by the human body (signal that can have all possible values and can change at every single instant)
+syncrhonous = interested in specific instant; digital = interested in specific value
+
+an analog signal has intrinsic error (real world error) that carries over and may increase when copied (increase in noise)
+a digital signal doesn't lose accuracy coping a digital signal
+from analog to digital there is possibility of losing quality because of compression
+the output from either analog or digital is defacto analog thus may add noise.
+
+External Memory:
+    storage hardware that is cheaper, but slower than internal memory
+    external memory does not depend on Abus because it's considered a peripheral.
+CPU (central processing unit) is made up of main blocks:
+    1) CONTROL UNIT: kernel (brain or heart) of CPU. I.e. the director that gives out instructions. Made of:
+        - Program Counter = Fetches instruction. point in memory (memory = big indexed list) where I'm supposed to find instructions on what I need to do. It has a counter that increases as it moves to another instruction. The instruction is encoded.
+        - Instruction register = holds the current instruction so that it can be  decoded and inputed to the Control logic
+        - Control Logic = hardware that's able to read instructions given by the Instruction Register and issue a command.
+        - Various registers such as: [Register = local memory elements used to store data temporally. It's has word dimensions (64 bit)]
+            [Flag register = state indicator of the ALU (arithmetic logic unit) result. It's single bit (0 = false, 1 = True).
+                the most common flags are Z (zero), V (overflow), CY (carry), N (negative)]
+            [ALU register performs all integer computations, FPU (floating point unit) performs floating point computations. FPU is legacy since it's not as used anymore]
+        clock period = distance between two peaks of a repetitive clock signal.
+        clock frequency = reciprocal of clock period
+        machine-cycle = time interval to execute a basic operation. integral multiple of the clock period
+    2) MEMORY (DRAM):
+        1) Addressing: Memory is organized in cells (min directly accessible unit) an address (index number) is assigned to each cell to identify it. The size of one cell is one byte
+            [1 byte = 8 bit] remember convention we call the size of a cell with byte.
+        2) Parallelism : how much information we're able to transfer to and out of the memory at same time.
+        3) Internal memory : small, volatile (data is lost if pc is unplugged) fast, expensive, called main memory
+            maximum size of internal memory: maximum index that one can use. max index = 2^(bits allocated to select the cell)
+             the channel to read and write cells is called Bbus and is 64bit nowdays.
+    3) BUS: circulatory system of the PC.
+        - transports data
+        - frequency = n. of bits transported in a second
+        - width = n. of bit composing a single data
+        can be a significant bottleneck if single bus in a system because it allows only 2 elements in the system to comunicate.
+        A single bus is composed of:
+            1) Data Bus (Dbus)
+            2) Address Bus(Abus)
+            3) Control (Cbus)
+        in the CPU a single unit handles the coordination of the buses
+
+"""
