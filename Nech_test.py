@@ -1,3 +1,5 @@
+
+
 def main():
     contacts = dict()
     for i in range(len(customers)):

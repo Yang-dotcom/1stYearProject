@@ -1,5 +1,6 @@
 # this is an example of answer filling
 # files attendance.txt and suspicious.txt are available, just open them
+
 def main():
     dict_name = dict()
     suspect_contacts_dict = dict()
