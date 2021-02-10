@@ -15,7 +15,6 @@
 # q = multiply(p, p)
 # printPolynomial(q)
 # Provide a module for the polynomial functions and import it into the driver module.
-
 import pol_mod
 
 def main():
