@@ -21,7 +21,7 @@ def main():
     for i in range(len(p_lists)):
         list_scores.append(sum_scores(p_lists[i]))
     for k in range(len(list_scores)):
-        print(f"Player {k}")
+        print(f"\nPlayer {k+1}")
         print(f"Frame       Score")
         print("-----        -----")
         for i in range(0, len(list_scores[k])):
