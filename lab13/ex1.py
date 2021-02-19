@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 def main():
     p_lists = list()
     try:
         with open("input.txt", "r") as file1:
             for line in file1:
                 p_lists.append(dict_player(line))
-<<<<<<< HEAD
-    except OSError as error:
-        print(f"{error}")
-
-    print(p_lists)
-=======
 
     except OSError as error:
         print(f"{error}")
@@ -26,16 +17,11 @@ def main():
         print("-----        -----")
         for i in range(0, len(list_scores[k])):
             print(f"{i+1}{list_scores[k][i]:15d}")
->>>>>>> origin/master
 
 
 def dict_player(line):
     p_dict = dict()
     scores_list = line.strip().split("  ")
-<<<<<<< HEAD
-    print(scores_list)
-=======
->>>>>>> origin/master
     for i in range(0, 10):
         p_dict[i+1] = scores_list[i].split(" ")
     if len(scores_list) == 11:
@@ -45,11 +31,6 @@ def dict_player(line):
         p_dict[12] = scores_list[11].split(" ")
     return p_dict
 
-<<<<<<< HEAD
-
-if __name__ == "__main__":
-    main()
-=======
 def sum_scores(p_scores):
     sum = 0
     sum_frames = list()
@@ -69,4 +50,3 @@ def sum_scores(p_scores):
 
 if __name__ == '__main__':
     main()
->>>>>>> origin/master
